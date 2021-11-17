@@ -193,19 +193,18 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $model = $this->findModel($id);
-
+        $this->validate($request, User::rules($id), User::messages($id));
         if($request->has('is_active')){
             /*check if user's employee is active*/
             $model->is_active = $request->input('is_active');
             $this->deleteAllOtherSessions($id);
         }
-        else {
-            $this->validate($request, User::rules($id), User::messages($id));
-            $model->username = $request->input('username');
-            $model->email = $request->input('email');
 
-            $model->user_access_id = $request->input('user_access_id');
-        }
+        $model->username = $request->input('username');
+        $model->email = $request->input('email');
+
+        $model->user_access_id = $request->input('user_access_id');
+
         $model->save();
 
         return response()->json($model, 200, [], JSON_PRETTY_PRINT);
