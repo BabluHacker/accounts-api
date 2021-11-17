@@ -41,11 +41,6 @@ class  CustomerController extends Controller
 
         $data_to_insert = $request->all();
 
-        $data_to_insert['pmuk_id'] = self::getPmukIdArea($data_to_insert['zone']);
-
-        unset($data_to_insert['zone']);
-
-
         $data_to_insert['created_by'] = $request->user()->id;
 
         $model = Customer::create($data_to_insert);
@@ -71,7 +66,6 @@ class  CustomerController extends Controller
         $this->validate($request, Customer::rules($id) );
 
         $data_to_insert = $request->all();
-        unset($data_to_insert['zone']);
 
         $model = Customer::where("id", $id)
             ->update($data_to_insert);
