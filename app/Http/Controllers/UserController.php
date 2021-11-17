@@ -20,7 +20,6 @@ class UserController extends Controller
     {
         $this->middleware('auth',
             ['except' => ['accesstoken', 'auth']]);
-        $this->middleware('browser_check', ['only' => ['auth']]);
         $this->middleware('access_check:user#list', ['only' => ['index']]);
         $this->middleware('access_check:user#detail', ['only' => ['view']]);
         $this->middleware('access_check:user#create', ['only' => ['create']]);
