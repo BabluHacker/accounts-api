@@ -10,13 +10,13 @@ class Account extends Model
     {
         if( $id == NULL )
             return [
-                'name' => 'required|unique:customers,name',
+                'name' => 'required|unique:accounts,name',
                 'type' => 'required|in:cash,bank',
                 'is_active' => 'required|in:Yes,No',
             ];
         else
             return [
-                'name' => 'required|unique:customers,name,'.$id,
+                'name' => 'required|unique:accounts,name,'.$id,
                 'type' => 'required|in:cash,bank',
                 'is_active' => 'required|in:Yes,No',
             ];
