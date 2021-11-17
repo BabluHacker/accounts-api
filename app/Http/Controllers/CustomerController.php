@@ -17,13 +17,13 @@ class  CustomerController extends Controller
      */
     public function __construct()
     {
-//        $this->middleware('auth');
+        $this->middleware('auth');
 
-        $this->middleware('access_check:customer#list', ['only' => ['index']]);
-        $this->middleware('access_check:customer#detail', ['only' => ['view']]);
-        $this->middleware('access_check:customer#create', ['only' => ['create']]);
-        $this->middleware('access_check:customer#edit', ['only' => ['update']]);
-        $this->middleware('access_check:customer#delete', ['only' => ['delete']]);
+//        $this->middleware('access_check:customer#list', ['only' => ['index']]);
+//        $this->middleware('access_check:customer#detail', ['only' => ['view']]);
+//        $this->middleware('access_check:customer#create', ['only' => ['create']]);
+//        $this->middleware('access_check:customer#edit', ['only' => ['update']]);
+//        $this->middleware('access_check:customer#delete', ['only' => ['delete']]);
 
     }
 
