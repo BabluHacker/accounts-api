@@ -16,7 +16,7 @@ class UserAccessController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
 
         $this->middleware('access_check:user_access#list', ['only' => ['index']]);
         $this->middleware('access_check:user_access#detail', ['only' => ['view']]);
