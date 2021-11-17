@@ -46,6 +46,14 @@ $router->group(['prefix' => 'v1'], function ($app) use ($router) {
         $app->delete('/{id}','CustomerController@delete');
         $app->get('/','CustomerController@index');
     });
+    $router->group( ['prefix' => 'accounts' ], function($app)
+    {
+        $app->post('/','AccountController@create');
+        $app->put('/{id}','AccountController@update');
+        $app->get('/{id}','AccountController@view');
+        $app->delete('/{id}','AccountController@delete');
+        $app->get('/','AccountController@index');
+    });
 
     $router->group( ['prefix' => 'users' ], function($app)
     {
