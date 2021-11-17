@@ -25,7 +25,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
             return [
 
                 'username' => 'required|unique:users,username',
-                'password' => 'required|min:6|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!@$^&*<>?#%]).*$/',
+                'password' => 'required|min:6',
                 'confirm_password' => 'required|same:password',
 //                'email' => 'email|unique:users,email,'.$id,
                 'user_access_id' => 'required|not_in:0',
