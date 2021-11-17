@@ -10,7 +10,7 @@ class Customer extends Model
     {
         if( $id == NULL )
             return [
-                'name' => 'required',
+                'name' => 'required|unique:customers,name',
                 'phone_no' => array('required', 'regex:/^01(1|3|4|5|6|7|8|9)\d{8}$/', 'unique:customers,phone_no'),
                 'second_phone_no' => array( 'regex:/^01(1|3|4|5|6|7|8|9)\d{8}$/'),
                 'address' => 'required',

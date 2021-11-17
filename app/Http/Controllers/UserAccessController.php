@@ -18,11 +18,11 @@ class UserAccessController extends Controller
     {
         $this->middleware('auth', ['except' =>['defaultUserAccessJson']]);
 
-        $this->middleware('access_check:user_access#list', ['only' => ['index']]);
-        $this->middleware('access_check:user_access#detail', ['only' => ['view']]);
-        $this->middleware('access_check:user_access#create', ['only' => ['create']]);
-        $this->middleware('access_check:user_access#edit', ['only' => ['update']]);
-        $this->middleware('access_check:user_access#delete', ['only' => ['delete']]);
+//        $this->middleware('access_check:user_access#list', ['only' => ['index']]);
+//        $this->middleware('access_check:user_access#detail', ['only' => ['view']]);
+//        $this->middleware('access_check:user_access#create', ['only' => ['create']]);
+//        $this->middleware('access_check:user_access#edit', ['only' => ['update']]);
+//        $this->middleware('access_check:user_access#delete', ['only' => ['delete']]);
 
     }
 
