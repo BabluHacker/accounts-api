@@ -3,12 +3,8 @@
 namespace App\Providers;
 
 use App\User;
-use App\AuthorizationCodes;
 use App\AccessTokens;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
-use Sinergi\BrowserDetector\Browser;
-use Sinergi\BrowserDetector\Os;
 
 class AuthServiceProvider extends ServiceProvider
 {

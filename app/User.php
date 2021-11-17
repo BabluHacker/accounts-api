@@ -29,7 +29,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
                 'confirm_password' => 'required|same:password',
 //                'email' => 'email|unique:users,email,'.$id,
                 'user_access_id' => 'required|not_in:0',
-                'employee_id' => 'required|check_is_active|check_is_exists_user',
+                'is_active' => 'required|in:Yes,No',
 //                'allowed_ids' => 'required', required if employee is on HQ
 
             ];

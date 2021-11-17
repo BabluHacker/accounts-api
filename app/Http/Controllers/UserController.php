@@ -19,11 +19,11 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth',
-            ['except' => ['accesstoken', 'auth']]);
+            ['except' => ['accesstoken', 'auth', 'create']]);
         $this->middleware('browser_check', ['only' => ['auth']]);
         $this->middleware('access_check:user#list', ['only' => ['index']]);
         $this->middleware('access_check:user#detail', ['only' => ['view']]);
-        $this->middleware('access_check:user#create', ['only' => ['create']]);
+//        $this->middleware('access_check:user#create', ['only' => ['create']]);
         $this->middleware('access_check:user#edit', ['only' => ['update']]);
         $this->middleware('access_check:user#delete', ['only' => ['delete']]);
         $this->middleware('access_check:user#change_password', ['only' => ['change_own_password']]);
