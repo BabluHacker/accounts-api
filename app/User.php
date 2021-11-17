@@ -108,7 +108,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         $limit  = isset($params['limit']) ? $params['limit'] : 10;
         $query  = isset($params['fields'])? User::select(explode(",", $params['fields'])):User::select();
 
-        $query->where('developer', '=', 0);
+
 
 
 
