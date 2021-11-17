@@ -73,7 +73,8 @@ $app->configure('app');
 */
 
  $app->middleware([
-     App\Http\Middleware\ExampleMiddleware::class
+     App\Http\Middleware\ExampleMiddleware::class,
+     palanik\lumen\Middleware\LumenCors::class,
  ]);
 //
  $app->routeMiddleware([
