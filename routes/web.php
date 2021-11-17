@@ -55,7 +55,7 @@ $router->group(['prefix' => 'v1'], function ($app) use ($router) {
         $app->delete('/{id}','UserController@delete');
         $app->get('/','UserController@index');
     });
-    $router->group( ['prefix' => 'useraccess', 'middleware' => 'auth'], function ($app)
+    $router->group( ['prefix' => 'useraccess'], function ($app)
     {
         $app->get('/', 'UserAccessController@index');
         $app->get('/{id}', 'UserAccessController@view');
