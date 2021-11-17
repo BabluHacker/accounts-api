@@ -19,11 +19,11 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth',
-            ['except' => ['accesstoken', 'auth', 'create']]);
+            ['except' => ['accesstoken', 'auth']]);
         $this->middleware('browser_check', ['only' => ['auth']]);
         $this->middleware('access_check:user#list', ['only' => ['index']]);
         $this->middleware('access_check:user#detail', ['only' => ['view']]);
-//        $this->middleware('access_check:user#create', ['only' => ['create']]);
+        $this->middleware('access_check:user#create', ['only' => ['create']]);
         $this->middleware('access_check:user#edit', ['only' => ['update']]);
         $this->middleware('access_check:user#delete', ['only' => ['delete']]);
         $this->middleware('access_check:user#change_password', ['only' => ['change_own_password']]);
@@ -179,7 +179,7 @@ class UserController extends Controller
 
         $attributes['password'] = Hash::make($attributes['password']);
         unset($attributes['confirm_password']);
-//        $attributes['created_by'] = $request->user()->id;
+        $attributes['created_by'] = $request->user()->id;
 
         $model = User::create($attributes);
 
