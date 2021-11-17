@@ -148,7 +148,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
         $model=User::where(['username'=>$attributes['username']])
             ->where('is_active', '=', 'Yes')
-            ->select(['id','email', 'username','password'])->first();
+            ->select(['id', 'username','password'])->first();
         if(!$model)
             return false;
 
