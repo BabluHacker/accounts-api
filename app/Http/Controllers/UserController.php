@@ -20,12 +20,12 @@ class UserController extends Controller
     {
         $this->middleware('auth',
             ['except' => ['accesstoken', 'auth']]);
-        $this->middleware('access_check:user#list', ['only' => ['index']]);
-        $this->middleware('access_check:user#detail', ['only' => ['view']]);
-        $this->middleware('access_check:user#create', ['only' => ['create']]);
-        $this->middleware('access_check:user#edit', ['only' => ['update']]);
-        $this->middleware('access_check:user#delete', ['only' => ['delete']]);
-        $this->middleware('access_check:user#change_password', ['only' => ['change_own_password']]);
+//        $this->middleware('access_check:user#list', ['only' => ['index']]);
+//        $this->middleware('access_check:user#detail', ['only' => ['view']]);
+//        $this->middleware('access_check:user#create', ['only' => ['create']]);
+//        $this->middleware('access_check:user#edit', ['only' => ['update']]);
+//        $this->middleware('access_check:user#delete', ['only' => ['delete']]);
+//        $this->middleware('access_check:user#change_password', ['only' => ['change_own_password']]);
     }
 
 
@@ -111,8 +111,6 @@ class UserController extends Controller
         $data = [];
         $data['access_token'] = $model->token;
         $data['expires_at']   = $model->expires_at;
-
-        $data['created_by'] = $model->created_by;
 
         $response = [
             'status' => 1,
