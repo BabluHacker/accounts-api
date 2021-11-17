@@ -179,7 +179,7 @@ class UserController extends Controller
 
         $attributes['password'] = Hash::make($attributes['password']);
         unset($attributes['confirm_password']);
-        $attributes['created_by'] = $request->user()->id;
+//        $attributes['created_by'] = $request->user()->id;
 
         $model = User::create($attributes);
 
