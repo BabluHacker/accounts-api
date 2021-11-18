@@ -87,7 +87,7 @@ class  CustomerController extends Controller
     }
 
     public function getLedger(Request $request, $id){
-        // todo action
+
     }
 
     public function findModel($id)

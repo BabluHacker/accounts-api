@@ -190,6 +190,13 @@ class UserAccessController extends Controller
                     ],
                 ],
             ],
+            'posting'          => [
+                'access'=> [
+                    'transaction'=>[
+                        'value' => false,
+                    ]
+                ],
+            ],
 
 
         );

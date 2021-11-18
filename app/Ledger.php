@@ -12,8 +12,8 @@ class Ledger extends Model
         $limit  = isset($params['limit']) ? $params['limit'] : 10;
         $query  = isset($params['fields'])? Ledger::select(explode(",", $params['fields'])):Ledger::select();
 
-        if(isset($params['name'])) {
-            $query->where('name','like', '%'.$params['name'].'%');
+        if(isset($params['customer_id'])) {
+            $query->where('customer_id','=', $params['customer_id']);
         }
 
         if(isset($order)){

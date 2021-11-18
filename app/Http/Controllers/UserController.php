@@ -34,7 +34,6 @@ class UserController extends Controller
         $response = [
             'status' => 1,
             'message'=> 'success',
-            'is_stage'=> env('IS_STAGE')
         ];
         return response()->json($response, 200, [], JSON_PRETTY_PRINT);
     }
@@ -201,8 +200,6 @@ class UserController extends Controller
         }
 
         $model->username = $request->input('username');
-        $model->email = $request->input('email');
-
         $model->user_access_id = $request->input('user_access_id');
 
         $model->save();

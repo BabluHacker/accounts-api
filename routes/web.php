@@ -37,6 +37,10 @@ $router->group(['prefix' => 'v1'], function ($app) use ($router) {
     $app->post('change_password','UserController@change_own_password');
 
     /************************* USER RELATED ROUTER (USER & ACCESS)*************************************/
+    $router->group( ['prefix' => 'posting', 'middleware' => 'auth' ], function($app)
+    {
+        $app->post('/','PostingController@transaction');
+    });
 
     $router->group( ['prefix' => 'customers', 'middleware' => 'auth' ], function($app)
     {

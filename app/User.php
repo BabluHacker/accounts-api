@@ -83,7 +83,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     }
     static public function change_pass_rules(){
         return [
-            'password' => 'required|min:6|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!@$^&*<>?#%]).*$/',
+            'password' => 'required|min:6',
             'confirm_password' => 'required|same:password',
         ];
     }
