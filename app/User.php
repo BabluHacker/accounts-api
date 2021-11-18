@@ -18,6 +18,10 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected $table="users";
     protected $guarded = ['id','created_at','updated_at'];
 
+    public function user_access()
+    {
+        return $this->belongsTo('App\UserAccess', 'user_access_id');
+    }
 
     static public function rules($id=NULL)
     {
