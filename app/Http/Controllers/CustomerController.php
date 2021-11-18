@@ -86,6 +86,10 @@ class  CustomerController extends Controller
         return response()->json($response, 200, [], JSON_PRETTY_PRINT);
     }
 
+    public function getLedger(Request $request, $id){
+        // todo action
+    }
+
     public function findModel($id)
     {
         //$model = Area::filterAccess($request, $id);

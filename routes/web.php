@@ -32,7 +32,7 @@ $router->group(['prefix' => 'v1'], function ($app) use ($router) {
     $app->post('authorize','UserController@auth');
     $app->post('accesstoken','UserController@accesstoken');
     $app->get('me','UserController@me');
-    $app->post('ping','UserController@ping');
+    $app->get('ping','UserController@ping');
     $app->get('logout','UserController@logout');
     $app->post('change_password','UserController@change_own_password');
 
@@ -45,6 +45,8 @@ $router->group(['prefix' => 'v1'], function ($app) use ($router) {
         $app->get('/{id}','CustomerController@view');
         $app->delete('/{id}','CustomerController@delete');
         $app->get('/','CustomerController@index');
+        /* Ledger of customer*/
+        $app->get('/ledger/{id}','CustomerController@getLedger');
     });
     $router->group( ['prefix' => 'accounts' ], function($app)
     {
