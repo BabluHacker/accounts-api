@@ -46,6 +46,7 @@ class  PostingController extends Controller
             $data_ledger['credit'] = $data_all['amount'];
             $data_ledger['debit'] = 0;
             $customer_model->balance -= $data_all['amount'];
+
         }
         elseif ($data_all['type'] == 'payment'){
             $data_ledger['credit'] = 0;
@@ -59,6 +60,7 @@ class  PostingController extends Controller
         }else{
             return response()->json(['message' => 'invalid transaction'], 400, [], JSON_PRETTY_PRINT);
         }
+        $data_ledger['balance'] = $customer_model->balance;
         DB::beginTransaction();
         Ledger::create($data_ledger);
         $customer_model->save();
