@@ -88,6 +88,7 @@ class  CustomerController extends Controller
     }
 
     public function getLedger(Request $request, $id){
+        $request->merge(['customer_id' => $id]);
         $response = Ledger::search($request);
         return response()->json($response, 200, [], JSON_PRETTY_PRINT);
     }
