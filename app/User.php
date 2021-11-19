@@ -20,8 +20,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 
     public function user_access()
     {
-        return $this->belongsTo('App\UserAccess', 'user_access_idki obostha
-        ');
+        return $this->belongsTo('App\UserAccess', 'user_access_id');
     }
 
     static public function rules($id=NULL)
