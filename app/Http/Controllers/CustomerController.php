@@ -5,6 +5,7 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Ledger;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
@@ -87,7 +88,8 @@ class  CustomerController extends Controller
     }
 
     public function getLedger(Request $request, $id){
-
+        $response = Ledger::search($request);
+        return response()->json($response, 200, [], JSON_PRETTY_PRINT);
     }
 
     public function findModel($id)
